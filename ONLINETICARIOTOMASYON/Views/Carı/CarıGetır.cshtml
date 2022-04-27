@@ -1,0 +1,43 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Carıler
+@{
+    ViewBag.Title = "CarıGetır";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+
+<br />
+<br />
+<h2 class="text-center" style="color:blue"> 💠 Cari Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("CarıGuncelle", "Carı", FormMethod.Post))
+{
+<div class="form-group " style="margin-left:400px;" >
+    <b>
+
+        @Html.HiddenFor(x => x.CarıID)
+        @Html.LabelFor(x => x.CarıAd)
+        @Html.TextBoxFor(x => x.CarıAd, new { @class = "form-control", style = "max-width:50%" })
+        @Html.ValidationMessageFor(x => x.CarıAd, "", new { @class = "color:red" })
+        <br />
+
+        @Html.LabelFor(x => x.CarıSoyad)
+        @Html.TextBoxFor(x => x.CarıSoyad, new { @class = "form-control", style = "max-width:50%" })
+        @Html.ValidationMessageFor(x => x.CarıSoyad, "", new { @class = "color:orange" })
+        <br />
+        @Html.LabelFor(x => x.CarıSehır)
+        @Html.TextBoxFor(x => x.CarıSehır, new { @class = "form-control", style = "max-width:50%" })
+        <br />
+
+        @Html.LabelFor(x => x.CarıMaıl)
+        @Html.TextBoxFor(x => x.CarıMaıl, new { @class = "form-control", style = "max-width:50%" })
+
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+
+
+    </b>
+</div>
+
+
+
+}

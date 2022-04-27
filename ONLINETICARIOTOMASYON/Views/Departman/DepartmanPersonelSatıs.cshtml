@@ -1,0 +1,67 @@
+﻿@using  ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<SatısHareket>
+@{
+    ViewBag.Title = "DepartmanPersonelSatıs";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+
+
+<h2 class="text-center" style="color:blue"># DEPARTMAN PERSONEL SATIŞLARI</h2>
+<br />
+<ol class="breadcrumb mb-4" style="background-color:#57a40b;max-width:30%">
+
+
+    <li class="breadcrumb-item active" style="color:white">Departman Adı: @ViewBag.dpers</li>
+
+</ol>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr style="background-color:#abf77d;color:blue">
+            <th>ÜRÜN</th>
+            <th>MÜŞTERİ</th>
+            <th>FİYAT</th>
+            <th>ADET</th>
+            <th>TOPLAM</th>
+            <th>TARİH</th>
+            <th>YAZDIR</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+
+        <tr>
+
+
+            <td>@x.Urunler.UrunAd</td>
+            <td>@x.Carıler.CarıAd  @x.Carıler.CarıSoyad</td>
+            <td>@x.Fıyat ₺</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarıh</td>
+
+            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">YAZDIR</a></td>
+
+        </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>ÜRÜN</th>
+            <th>MÜŞTERİ</th>
+            <th>FİYAT</th>
+            <th>ADET</th>
+            <th>TOPLAM</th>
+            <th>TARİH</th>
+            <th>YAZDIR</th>
+        </tr>
+    </tfoot>
+</table>

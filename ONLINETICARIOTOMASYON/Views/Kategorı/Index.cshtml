@@ -1,0 +1,40 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Kategorı>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<br />
+<h2 class="text-center">KATEGORİ LİSTESİ</h2>
+<table class="table table-striped" style="margin-top:20px;  margin-left:20px;margin-right:20px">
+    <tr style=" background-color: #005da3; color: white">
+
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+    <tr>
+
+
+        <td><b>● @k.KategorıAd</b></td>
+
+
+
+        
+        <td> <a href="/Kategorı/KategoriSil/@k.KategorıID" style="font-size:13px;" class="badge btn-danger"onclick = "return confirm('Silmek istiyor musunuz?')">SİL</a></td>
+        <td> <a href="/Kategorı/KategoriGetir/@k.KategorıID" style="font-size:13px;" class="badge btn-success">↻ GÜNCELLE</a></td>
+    </tr>
+    }
+
+
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa}))
+<a href="/Kategorı/KategoriEkle"style="font-size:17px;" class="badge btn-primary text-center">+ Kategori Ekle</a>

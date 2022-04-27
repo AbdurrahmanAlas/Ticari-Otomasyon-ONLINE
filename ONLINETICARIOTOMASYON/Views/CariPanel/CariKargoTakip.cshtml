@@ -1,0 +1,83 @@
+﻿
+@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "CariKargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+
+
+<br />
+<br />
+<h1 class="text-lg-center" style="color:blue">🚚 Kargom Nerede?</h1>
+<br />
+<table id="example" class="table table-warning" style="width:100%">
+    <thead>
+        <tr style="background-color:darkslategrey;color:white">
+            <th>Açıklama</th>
+
+            <th>Tarih</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+
+            <tr>
+
+
+                <td>🚚 @x.Aciklama</td>
+
+                <td>@x.TarihZaman</td>
+
+
+
+            </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Açıklama</th>
+
+            <th>Tarih</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+
+<a href="/Carı/YeniCarı/" class="btn btn-info">+ YENİ CARİ EKLE </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

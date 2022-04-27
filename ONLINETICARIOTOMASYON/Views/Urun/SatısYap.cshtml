@@ -1,0 +1,113 @@
+﻿
+@model ONLINETICARIOTOMASYON.Models.Sınıflarım.SatısHareket
+@{
+    ViewBag.Title = "SatısYap";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<br />
+<br />
+<h1 style="margin-left:350px; color:blue">Yeni  Satış  Yap</h1>
+
+
+<br />
+@using (Html.BeginForm("SatısYap", "Urun", FormMethod.Post))
+{
+
+
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            <b>
+                @Html.LabelFor(x => x.UrunID)
+               <input type="text" name="UrunID" value="@ViewBag.dgr2" class="form-control" ,
+               style = "max-width:30%" />
+
+                <br />
+
+                @Html.LabelFor(x => x.Personel)
+
+                @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr1, new
+           {
+
+               @class = "form-control",
+               style = "max-width:60%"
+           })
+                <br />
+
+                @Html.LabelFor(x => x.CarıID)
+                @Html.TextBoxFor(x => x.CarıID, new { @class = "form-control", style = "max-width:80%" })
+
+                <br />
+                @Html.LabelFor(x => x.Tarıh)
+                @Html.TextBoxFor(x => x.Tarıh, new { @class = "form-control", style = "max-width:80%",type="date" })
+                <br />
+            </b>
+        </div>
+        <div class="col-md-6">
+
+
+            <b>
+
+
+
+
+                @Html.LabelFor(x => x.Adet)
+                <input type="number" class="form-control" name="Adet" max="200" ;min="1" placeholder=" Adet giriniz" id="txt1" onchange="sum();" />
+                <br />
+
+                @Html.LabelFor(x => x.Fıyat)
+                <input type="text" name="Fıyat"  value="@ViewBag.dgr4" class="form-control" ,
+                       style="max-width:30%" id="txt2" onchange="sum();" />
+
+                <br />
+               
+                    @Html.LabelFor(x => x.ToplamTutar)
+            <b>
+                ₺ <input type="text" name="ToplamTutar" class="form-control" value="0" style="background-color:lawngreen; color:black;font-size:20px;max-width:20%" placeholder=" Adet giriniz" id="txt3" readonly" />
+            </b>  <br />
+            </b>
+            <button class="btn btn-primary" id="Btn1">Satış Yap</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        $('#Btn1').click(function () {
+
+            alert("Ürün başarılı bir şekilde eklendi")
+
+
+
+        });
+
+
+
+    </script>
+
+}
+
+
+
+
+<script>
+
+    function sum() {
+
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+
+        }
+
+
+    }
+
+
+</script>

@@ -1,0 +1,32 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Kategorı
+ 
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<br />
+<h2 style="color:blue">Kategori Güncelleme</h2>
+
+<br />
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategorı", FormMethod.Post))
+
+{
+
+    <div class="form-group">
+
+        <b>  @Html.LabelFor(x => x.KategorıAd)</b>
+        @Html.TextBoxFor(x => x.KategorıAd, new { @class="form-control", style = "max-width:40%" })
+        
+
+        @Html.HiddenFor(x=>x.KategorıID)
+
+
+
+
+    </div>
+    <button class="badge btn-warning">↻ GÜNCELLE</button>
+
+
+}

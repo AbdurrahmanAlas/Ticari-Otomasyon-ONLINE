@@ -1,0 +1,55 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<h2>Yeni  Fatura  Sayfası</h2>
+
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.FaturaSerıNo)
+    @Html.TextBoxFor(x => x.FaturaSerıNo, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.FaturaSıraNo)
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.Tarıh)
+    @Html.TextBoxFor(x => x.Tarıh, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.VergıDaıresı)
+    @Html.TextBoxFor(x => x.VergıDaıresı, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.TeslımEden)
+    @Html.TextBoxFor(x => x.TeslımEden, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.TeslımAlan)
+    @Html.TextBoxFor(x => x.TeslımAlan, new { @class = "form-control" })
+
+    <br />
+
+
+
+
+
+    <button class="btn btn-primary">KAYDET</button>
+
+
+
+
+</form>
+

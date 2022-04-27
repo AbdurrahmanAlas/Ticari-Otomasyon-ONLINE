@@ -1,0 +1,59 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<SatısHareket>
+@{
+    ViewBag.Title = "SatısDetay";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<br />
+
+
+<h2>DEPARTMAN PERSONEL SATIŞ</h2>
+<ol class="breadcrumb mb-4">
+
+
+    <li class="breadcrumb-item active">Personel Adı: @ViewBag.dpers</li>
+
+</ol>
+<table class="table table-condensed">
+
+    <tr>
+        <th>SATIS ID</th>
+        <th>ÜRÜN</th>
+        <th>CARİ</th>
+        <th>FİYAT</th>
+        <th>ADET</th>
+        <th>TOPLAM</th>
+        <th>TARİH</th>
+        <th>PERSONEL</th>
+
+
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.SatısID</td>
+            <td>@x.Urunler.UrunAd</td>
+            <td>@x.Carıler.CarıAd  @x.Carıler.CarıSoyad</td>
+            <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
+            <td>@x.Fıyat</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarıh</td>
+
+   
+
+
+        </tr>
+
+
+
+    }
+
+</table>
+
+
+<button class="btn btn-default" style="background-color:dodgerblue">YAZDIR</button>

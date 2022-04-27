@@ -1,0 +1,74 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.SatısHareket
+@{ 
+    ViewBag.Title = "YenıSatıs";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+
+<h2 class="text-center" style="color:blue">+ Yeni  Satıs  Sayfası</h2>
+
+<br />
+
+
+<form class="form-group" method="post" style="margin-left:400px;">
+    <b>
+        @Html.LabelFor(x => x.Urunler)
+
+        @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.dgr1, new
+    {
+
+        @class = "form-control",
+            style = "max-width:60%"
+    })
+        <br />
+        @Html.LabelFor(x => x.Carıler)
+
+        @Html.DropDownListFor(x => x.CarıID, (List<SelectListItem>)ViewBag.dgr2, new
+   {
+
+       @class = "form-control",
+       style = "max-width:60%"
+   })
+        <br />
+
+        @Html.LabelFor(x => x.Personel)
+
+        @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr3, new
+   {
+
+       @class = "form-control",
+       style = "max-width:60%"
+   })
+        <br />
+
+
+        <br />
+
+        @Html.LabelFor(x => x.Adet)
+        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control", style = "max-width:60%" })
+
+        <br />
+
+        @Html.LabelFor(x => x.Fıyat)
+        @Html.TextBoxFor(x => x.Fıyat, new { @class = "form-control", style = "max-width:60%" })
+
+        <br />
+
+
+
+
+        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control", style = "max-width:60%" })
+
+        <br />
+
+
+
+
+        <button class="btn btn-primary">+ SATIŞ YAP</button>
+
+
+    </b>
+
+</form>
+

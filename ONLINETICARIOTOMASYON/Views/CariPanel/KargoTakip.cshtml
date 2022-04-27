@@ -1,0 +1,87 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+
+</br>
+
+
+</br>
+<h2 style="color:blue" class="text-center"><b>💻 Kargo Listesi</b> </h2>
+<br />
+<br />
+
+
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+{
+    <p>
+        Kargo Takip No:@Html.TextBox("p")
+        <input type="submit"value="Ara" />
+
+
+    </p>
+}
+
+
+
+
+
+<table id="example" class="table table-bordered" style="width:100%">
+    <thead>
+        <tr style="background-color:darkslategrey;color:white">
+            <th>Personel</th>
+
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var u in Model)
+        {
+
+            <tr>
+
+
+                <td> <b>✨ @u.Personel</b></td>
+                <td>@u.Alici</td>
+                <td>@u.Tarih</td>
+
+
+
+
+
+
+
+                <td>
+                    <a href="/CariPanel/CariKargoTakip/@u.TakipKodu" style="font-size:14px;" class="badge btn-danger">Kargo Detayları</a>
+
+                </td>
+
+
+
+            </tr>
+            }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Personel</th>
+
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+
+        </tr>
+    </tfoot>
+</table>
+
+<a href="/Kargo/YeniKargo/" class="btn btn-info" id="Btn1">+ Yeni Kargo Girişi</a>
+
+

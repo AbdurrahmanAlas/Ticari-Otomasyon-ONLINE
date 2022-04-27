@@ -1,0 +1,26 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Kategorı
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+
+<h2 style="color:blue" >Yeni Kategori sayfası</h2>
+
+<br />
+<form class="form-group " method="post">
+    <b> @Html.LabelFor(x => x.KategorıAd)</b>
+    @Html.TextBoxFor(x=>x.KategorıAd,new {@class="form-control", style = "max-width:40%" })
+
+    <br />
+
+    <button class="btn btn-success">⊕ KAYDET</button>
+
+
+
+
+
+</form>

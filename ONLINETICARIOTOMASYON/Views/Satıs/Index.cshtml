@@ -1,0 +1,69 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<SatısHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+<h3 style="color:blue" class="text-center">💳 TÜM SATIŞLARIN LİSTESİ</h3>
+<br />
+<table id="example" class="table table-bordered" style="margin-top:20px;margin-left:20px;margin-right:20px">
+    <thead>
+        <tr style="background-color:#fff371">
+
+            <th>ÜRÜN ⥣</th>
+            <th>CARİ ⥣</th>
+            <th>PERSONEL ⥣</th>
+            <th>ADET ⥣</th>
+            <th>FİYAT ⥣</th>
+            <th>TOPLAM ⥣</th>
+            <th>TARİH ⥣</th>
+            <th>DETAYLAR ⥣</th>
+            <th>GÜNCELLE ⥣</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+
+            <tr>
+
+
+                <td sty>◈ @k.Urunler.UrunAd</td>
+                <td>@k.Carıler.CarıAd</td>
+                <td>@k.Personel.PersonelAd@k.Personel.PersonelSoyad</td>
+                <td>@k.Adet</td>
+                <td>@k.Fıyat</td>
+                <td>@k.ToplamTutar</td>
+                <td>@k.Tarıh</td>
+
+
+
+                
+                <td> <a href="/Satıs/SatısGetır/@k.SatısID" class="badge btn-success" style="font-size:16px;">↺ Güncelle</a></td>
+                <td> <a href="/Satıs/SatısDetay/@k.PersonelID" class="badge btn-dark" style="font-size:16px; ">➔ DETAYLAR</a></td>
+            </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>ÜRÜN</th>
+            <th>CARİ</th>
+            <th>PERSONEL</th>
+            <th>ADET</th>
+            <th>FİYAT</th>
+            <th>TOPLAM</th>
+            <th>TARİH</th>
+            <th>DETAYLAR</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </tfoot>
+</table>
+
+<a href="/Satıs/YenıSatıs/" class="btn btn-info">YENİ SATIŞ YAP</a>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+

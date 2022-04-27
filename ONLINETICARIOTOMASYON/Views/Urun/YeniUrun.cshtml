@@ -1,0 +1,86 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<br />
+<br />
+<h1 style="margin-left:350px; color:blue">Yeni  Ürun  Sayfası</h1>
+
+<br />
+@using (Html.BeginForm("YeniUrun", "Urun", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+   
+
+            <div class="row col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(x => x.UrunAd)
+                    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control", style = "max-width:80%" })
+
+                    <br />
+
+                    @Html.LabelFor(x => x.Marka)
+                    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control", style = "max-width:80%" })
+
+                    <br />
+
+                    @Html.LabelFor(x => x.Stok)
+                    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control", style = "max-width:80%" })
+
+                    <br />
+
+                    @Html.LabelFor(x => x.AlısFıyat)
+                    @Html.TextBoxFor(x => x.AlısFıyat, new { @class = "form-control", style = "max-width:80%" })
+
+                    <br />
+
+                    @Html.LabelFor(x => x.SatısFıyat)
+                    @Html.TextBoxFor(x => x.SatısFıyat, new { @class = "form-control", style = "max-width:80%" })
+
+                    <br />
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(x => x.Kategorı.KategorıID)
+
+                    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new
+               {
+
+                   @class = "form-control",
+                   style = "max-width:80%"
+               })
+
+
+                    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+
+                    <br />
+
+                    @Html.LabelFor(x => x.UrunGorsel)
+                    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+                    <input type="file" name="UrunGorsel" />
+                    <br />
+
+
+
+                    @Html.LabelFor(x => x.Durum)
+                    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control", style = "max-width:80%" })
+                    <br />
+                    <button class="btn btn-primary" id="Btn1">KAYDET</button>
+                </div>
+            </div>
+
+            <script>
+
+    $('#Btn1').click(function () {
+
+        alert("Ürün başarılı bir şekilde eklendi")
+
+
+
+    });
+
+
+
+            </script>
+   
+}

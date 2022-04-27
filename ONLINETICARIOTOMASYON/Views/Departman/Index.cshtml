@@ -1,0 +1,40 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<h1 style="margin-left:470px;color:blue">DEPARTMAN LİSTESİ</h1>
+<br />
+<table class="table table-bordered" style="margin-top:20px;margin-left:20px;margin-right:20px">
+    <tr style="background-color:#138a7f;color:white">
+        <th>#</th>
+        <th>DEPARTMAN ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+    <tr>
+        <td>#</td>
+
+        <td>@k.DepartmanAd</td>
+
+
+
+
+        <td> <a href="/Departman/DepartmanSil/@k.DepartmanID" class="badge btn-danger " style="font-size:16px;"onclick = "return confirm('Silmek istiyor musunuz?')">xSİL</a></td>
+        <td> <a href="/Departman/DepartmanGetir/@k.DepartmanID" class="badge btn-success" style="font-size:16px;">Güncelle</a></td>
+        <td> <a href="/Departman/DepartmanDetay/@k.DepartmanID" class="btn btn-success"style="background-color:lightcoral ">DETAYLAR</a></td>
+    </tr>
+    }
+
+
+
+</table>
+
+<a href="/Departman/DepartmanEkle" class="btn btn-info">+DEPARTMAN EKLE</a>
+

@@ -1,0 +1,60 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım  
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<br />
+
+
+<h1 style="margin-left:500px;color:blue"># Departman Detayları</h1>
+
+<br />
+ 
+
+<ol class="breadcrumb mb-4"style="background-color:#1ca3b6;max-width:30%">
+    
+    
+    <li class="breadcrumb-item active" style="color:white">Departman Adı: @ViewBag.d</li>
+    
+    </ol>
+
+<table class="table table-hover">
+
+    <tr style="background-color:seagreen;color:white">
+
+
+        <th>PERSONEL ADI </th>
+       <th></th>
+        <th>PERSONEL FOTOGRAF</th>
+        <th>YAPILAN SATIŞLAR</th>
+
+
+
+    </tr>
+    <br />
+   @foreach (var x in Model)
+   {
+<tr>
+
+    <td><b>@x.PersonelAd @x.PersonelSoyad</b></td>
+    <td></td>
+    <td>
+        <a href="@(x.PersonelGorsel)"
+           target="_blank"
+           title="Görüntüle"><img src="@x.PersonelGorsel" style="width:400px;height:350px" /></a>
+    </td>
+    <td><a href="/Departman/DepartmanPersonelSatıs/@x.PersonelID" class="btn btn-default" style="background-color:orange">Personelin Yaptığı Satışlar ></a></td>
+
+
+
+
+
+</tr>
+
+
+   }
+
+
+</table>

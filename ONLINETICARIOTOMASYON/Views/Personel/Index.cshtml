@@ -1,0 +1,52 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+
+
+<h1 style="margin-left:500px;color:blue">🤵 Personel Listesi</h1>
+
+<br />
+<table class="table table-bordered" style="margin-top:20px;margin-left:20px;margin-right:20px">
+    <tr style="background-color:#faf775">
+       
+        <th>PERSONEL ADI</th>
+        <th>SOYAD</th>
+        <th>GÖRSEL</th>
+        <th>DEPARTMAN</th>
+        <th>GÜNCELLE</th>
+        <th>SATIŞLAR</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+       
+
+            <td>🤵 <b>@k.PersonelAd</b></td>
+            <td>@k.PersonelSoyad</td>
+            <td>
+                <a href="@(k.PersonelGorsel)"
+                   target="_blank"
+                   title="Görüntüle"><img src="@k.PersonelGorsel" style="width:180px;height:140px" /></a>
+            </td>
+            <td>@k.Departman.DepartmanAd</td>
+
+
+
+
+            <td> <a href="/Personel/PersonelGetır/@k.PersonelID" class="badge btn-success">GÜNCELLE</a></td>
+            <td> <a href="/Departman/DepartmanPersonelSatıs/@k.PersonelID" class="badge btn-success" style="background-color:lightcoral ">DETAYLAR</a></td>
+        </tr>
+    }
+
+
+
+</table>
+
+<a href="/Personel/PersonelEkle" class="badge btn-info">+ PERSONEL EKLE</a>
+
+

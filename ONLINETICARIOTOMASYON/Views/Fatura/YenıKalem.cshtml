@@ -1,0 +1,46 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.FaturaKalem
+@{
+    ViewBag.Title = "YenıKalem";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+<h2>Yeni kalem Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("YenıKalem", "Fatura", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.Acıklama)
+    @Html.TextBoxFor(x => x.Acıklama, new { @class = "form-control" })
+    <br />
+
+
+    @Html.LabelFor(x => x.Mıktar)
+    @Html.TextBoxFor(x => x.Mıktar, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.BırımFıyat)
+    @Html.TextBoxFor(x => x.BırımFıyat, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.FaturaID)
+    @Html.TextBoxFor(x => x.FaturaID, new { @class = "form-control" })
+
+    <br />
+
+
+
+
+    <button class="btn btn-warning">Ekle</button>
+
+
+
+
+}
+

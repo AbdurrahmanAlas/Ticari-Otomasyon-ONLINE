@@ -1,0 +1,83 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<Carıler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+<h1 class="text-lg-center" style="color:blue">≣  Müşteri Listesi</h1>
+<br />
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr style="background-color:darkslategrey;color:white">
+            <th>Ad Soyad</th>
+
+            <th>Şehir</th>
+            <th>Mail</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Satış Geçmişi</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+
+            <tr>
+
+        
+                <td>● @x.CarıAd @x.CarıSoyad</td>
+                
+                <td>@x.CarıSehır</td>
+                <td>@x.CarıMaıl</td>
+                <td><a href="/Carı/CarıSil/@x.CarıID" class="btn btn-danger">x Sil</a></td>
+                <td><a href="/Carı/CarıGetır/@x.CarıID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Carı/MusterıSatıs/@x.CarıID" class="btn btn-outline-primary">SATIŞ GEÇMİŞİ</a></td>
+
+
+            </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ad Soyad</th>
+
+            <th>Şehir</th>
+            <th>Mail</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Satış Geçmişi</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+
+<a href="/Carı/YeniCarı/" class="btn btn-info">+ YENİ CARİ EKLE </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

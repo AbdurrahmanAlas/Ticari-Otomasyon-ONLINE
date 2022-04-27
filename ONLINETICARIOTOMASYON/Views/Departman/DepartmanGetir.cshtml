@@ -1,0 +1,33 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Departman
+
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+<h2 style="color:blue;margin-left:350px;">Departman Güncelleme</h2>
+
+<br />
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+
+{
+
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.DepartmanAd)
+        @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control",style="max-width:40%" })
+
+
+        @Html.HiddenFor(x => x.DepartmanID)
+
+
+
+
+    </div>
+    <button class="btn btn-default" style="background-color:greenyellow">GÜNCELLE</button>
+
+
+}
+

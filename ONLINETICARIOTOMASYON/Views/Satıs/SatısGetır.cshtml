@@ -1,0 +1,76 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.SatısHareket
+
+@{
+    ViewBag.Title = "SatısGetır";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+
+<h2 class="text-center" style="color:darkred">📍 Satış Güncelleme Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("SatısGuncelle", "Satıs", FormMethod.Post))
+{
+<b>
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            @Html.HiddenFor(x => x.SatısID)
+
+            @Html.LabelFor(x => x.Urunler)
+
+            @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.dgr1, new
+        {
+
+            @class = "form-control"
+        })
+
+            @Html.LabelFor(x => x.Carıler)
+
+            @Html.DropDownListFor(x => x.CarıID, (List<SelectListItem>)ViewBag.dgr2, new
+        {
+
+            @class = "form-control"
+        })
+            <br />
+
+            @Html.LabelFor(x => x.Personel)
+
+            @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr3, new
+        {
+
+            @class = "form-control"
+        })
+
+            <br />
+
+
+            @Html.LabelFor(x => x.Adet)
+            @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+
+            <br />
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(x => x.Fıyat)
+            @Html.TextBoxFor(x => x.Fıyat, new { @class = "form-control" })
+
+            <br />
+
+            @Html.LabelFor(x => x.ToplamTutar)
+            @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+
+            <br />
+
+            @Html.LabelFor(x => x.Tarıh)
+            @Html.TextBoxFor(x => x.Tarıh, new { @class = "form-control" })
+
+            <br />
+
+            <button class="btn btn-warning text-center">↺ GÜNCELLE</button>
+
+        </div>
+    </div>
+
+
+</b>    }

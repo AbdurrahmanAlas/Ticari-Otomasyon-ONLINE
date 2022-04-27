@@ -1,0 +1,56 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Faturalar
+@{
+    ViewBag.Title = "FaturaGetır";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+
+<h2>Fatura Güncelleme Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.FaturaID)
+    @Html.LabelFor(x => x.FaturaSerıNo)
+    @Html.TextBoxFor(x => x.FaturaSerıNo, new { @class = "form-control" })
+    <br />
+
+
+    @Html.LabelFor(x => x.FaturaSıraNo)
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.VergıDaıresı)
+    @Html.TextBoxFor(x => x.VergıDaıresı, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.Tarıh)
+    @Html.TextBoxFor(x => x.Tarıh, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.TeslımEden)
+    @Html.TextBoxFor(x => x.TeslımEden, new { @class = "form-control" })
+
+
+    <br />
+    @Html.LabelFor(x => x.TeslımAlan)
+    @Html.TextBoxFor(x => x.TeslımAlan, new { @class = "form-control" })
+
+
+
+
+
+    <button class="btn btn-warning">GÜNCELLE</button>
+
+
+
+
+}
+

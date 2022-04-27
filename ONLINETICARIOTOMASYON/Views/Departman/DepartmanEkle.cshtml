@@ -1,0 +1,25 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Departman
+
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<h2>Yeni Departman sayfası</h2>
+
+<br />
+<form class="form-group" method="post">
+  @Html.LabelFor(x=>x.DepartmanAd)
+    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control", style = "max-width:60%" })
+
+    <br />
+
+    <button class="btn btn-info">KAYDET</button>
+
+
+
+
+
+</form>
+
+

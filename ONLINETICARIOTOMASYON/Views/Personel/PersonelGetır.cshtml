@@ -1,0 +1,53 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.Personel
+@{
+    ViewBag.Title = "PersonelGetır";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+<br />
+<br />
+
+<h2 class="text-center" style="color:blue">🤵Personel Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+<div class="form-group" style="margin-left:370px;">
+
+    @Html.HiddenFor(x => x.PersonelID)
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control",style="max-width:50%" })
+    <br />
+
+    @Html.HiddenFor(x => x.PersonelSoyad)
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control", style = "max-width:50%" })
+
+
+
+    <br />
+
+    @Html.HiddenFor(x => x.PersonelGorsel)
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control", style = "max-width:50%" })
+
+
+
+    <br />
+    @Html.HiddenFor(x => x.Departman)
+
+
+    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.dgr1, new
+{
+
+    @class = "form-control",
+    style = "max-width:50%"
+})
+
+
+
+
+    <br />
+    <button class="btn btn-primary">KAYDET</button>
+
+</div>
+
+
+}
+

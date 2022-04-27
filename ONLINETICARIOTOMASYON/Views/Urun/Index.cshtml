@@ -1,0 +1,92 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+</br>
+</br>
+<h2 style="color:blue" class="text-center"><b>💻 ÜRÜN LİSTESİ</b> </h2>
+<br />
+<br />
+
+
+
+
+
+
+
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr style="background-color:darkslategrey;color:white">
+            <th>Ürün Adı</th>
+
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyat</th>
+            <th>SatışFiyat</th>
+            <th>ÜrünGörsel</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Satıış Yap</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var u in Model)
+        {
+
+        <tr>
+
+
+            <td> <b>➣ @u.UrunAd</b></td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlısFıyat</td>
+            <td>@u.SatısFıyat</td>
+
+
+
+            <td>
+                <a href="@(u.UrunGorsel)"
+                   target="_blank"
+                   title="Görüntüle"><img src="@u.UrunGorsel" style="width:180px;height:140px" /></a>
+            </td>
+
+
+            <td>
+                <a href="/Urun/UrunSil/@u.UrunID" style="font-size:14px;" class="badge btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">x SİL</a>
+
+            </td>
+
+
+            <td>
+                <a href="/Urun/UrunGetir/@u.UrunID" style="font-size:14px;" class="badge btn-success">GÜNCELLE</a>
+
+            </td>
+            <td>
+                <a href="/Urun/SatısYap/@u.UrunID" style="font-size:14px;" class="badge btn-primary">💳 SATIŞ YAP</a>
+
+            </td>
+        </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ürün Adı</th>
+
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyat</th>
+            <th>SatışFiyat</th>
+            <th>ÜrünGörsel</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </tfoot>
+</table>
+
+<a href="/Urun/YeniUrun/" class="btn btn-info" id="Btn1">+ Ürün Ekle</a>

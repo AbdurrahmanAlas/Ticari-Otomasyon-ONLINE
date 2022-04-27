@@ -1,0 +1,45 @@
+﻿@model ONLINETICARIOTOMASYON.Models.Sınıflarım.KargoDetay
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/AdmınLayout.cshtml";
+}
+
+
+
+
+<br />
+<br />
+<h2 class="text-center" style="color:blue">📌 Yeni Kargo Giriş sayfası</h2>
+
+<br />
+
+<form class="form-group" method="post" style="margin-left:400px;">
+    @Html.LabelFor(x => x.TakipKodu)
+   <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TakipKodu" />
+    <br />
+    @Html.LabelFor(x => x.Personel)
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control", style = "max-width:60%" })
+
+    <br />  @Html.LabelFor(x => x.Alici
+)
+    @Html.TextBoxFor(x => x.Alici, new { @class = "form-control", style = "max-width:60%" })
+
+    <br />  @Html.LabelFor(x => x.Tarih)
+    <input type="date" name="Tarih" class="form-control" , style = "max-width:60%"/>
+
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", style = "max-width:60%" })
+
+    <br />
+    <button class="btn btn-info">KAYDET</button>
+
+
+
+
+
+</form>
+
+
+
+

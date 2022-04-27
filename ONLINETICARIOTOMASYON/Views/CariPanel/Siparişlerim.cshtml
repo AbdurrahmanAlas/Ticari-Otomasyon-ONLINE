@@ -1,0 +1,36 @@
+﻿@using ONLINETICARIOTOMASYON.Models.Sınıflarım
+@model List<SatısHareket>
+@{
+    ViewBag.Title = "Siparişlerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2 class="text-center"style="color:blue">Sipariş Geçmişim</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <tr style="background-color:#fff873">
+
+
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+
+        <td>@x.Urunler.UrunAd</td>
+        <td>@x.Fıyat</td>
+        <td>@Convert.ToDateTime(x.Tarıh).ToString("dd/MM/yyy")</td>
+
+
+
+
+    </tr>
+    }
+
+</table>
